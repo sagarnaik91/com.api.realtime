@@ -24,11 +24,7 @@ public class CreateCustomerTest_Optimized extends BaseTest {
 
     @Test(dataProviderClass = TestParametrization.class, dataProvider = "datasource")
     public void cxCreationInvalidKey(Hashtable<String, String> table) {
-        Response res = given().auth().basic(prop.getProperty("inValidSecretKey"), "")
-                .formParam("email", table.get("email"))
-                .formParam("description", table.get("description"))
-                .formParam("name", table.get("name"))
-                .post(prop.getProperty("customerApiEndpoint"));
+        Response res = CreateCustomerAPI.createCustomerWithInvalidKey(table);
         res.prettyPrint();
         System.out.println(res.getTime());
         System.out.println(res.statusCode());
