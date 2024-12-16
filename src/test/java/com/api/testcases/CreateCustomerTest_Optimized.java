@@ -1,6 +1,7 @@
 package com.api.testcases;
 
 import com.api.executeAPI.CreateCustomerAPI;
+import com.api.listeners.ExtentListeners;
 import com.api.setup.BaseTest;
 import com.api.utilities.DataUtil;
 import com.api.utilities.TestParametrization;
@@ -16,6 +17,7 @@ public class CreateCustomerTest_Optimized extends BaseTest {
     @Test(dataProviderClass = TestParametrization.class, dataProvider = "datasource")
     public void cxCreationValidKey(Hashtable<String, String> table) {
         Response res = CreateCustomerAPI.createCustomerWithValidKey(table);
+        ExtentListeners.testReport.get().info(table.toString());
         res.prettyPrint();
         System.out.println(res.getTime());
         System.out.println(res.statusCode());
@@ -25,6 +27,7 @@ public class CreateCustomerTest_Optimized extends BaseTest {
     @Test(dataProviderClass = TestParametrization.class, dataProvider = "datasource")
     public void cxCreationInvalidKey(Hashtable<String, String> table) {
         Response res = CreateCustomerAPI.createCustomerWithInvalidKey(table);
+        ExtentListeners.testReport.get().info(table.toString());
         res.prettyPrint();
         System.out.println(res.getTime());
         System.out.println(res.statusCode());
