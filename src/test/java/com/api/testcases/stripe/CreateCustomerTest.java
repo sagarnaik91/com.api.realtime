@@ -1,14 +1,10 @@
-package com.api.testcases;
+package com.api.testcases.stripe;
 
 import com.api.setup.BaseTest;
 import com.api.utilities.DataUtil;
-import com.api.utilities.TestParametrization;
 import io.restassured.response.Response;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import java.util.Hashtable;
 
 import static io.restassured.RestAssured.*;
 

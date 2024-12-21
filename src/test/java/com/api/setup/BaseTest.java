@@ -18,10 +18,10 @@ public class BaseTest {
     public static ExcelReader excel = new ExcelReader("src/test/resources/testdata.xlsx");
     @BeforeSuite
     public void setup() throws IOException {
-        baseURI = "https://api.stripe.com";
-        basePath = "v1";
         fis=new FileInputStream("src/test/resources/config.properties");
         prop.load(fis);
+        baseURI = prop.getProperty("baseUri");
+        basePath = prop.getProperty("basePath");
     }
 
     @AfterSuite

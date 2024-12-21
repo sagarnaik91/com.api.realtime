@@ -1,18 +1,14 @@
-package com.api.testcases;
+package com.api.testcases.stripe;
 
-import com.api.executeAPI.DeleteCustomerAPI;
+import com.api.executeAPI.stripe.DeleteCustomerAPI;
 import com.api.setup.BaseTest;
 import com.api.utilities.TestParametrization;
 import com.api.utilities.TestUtilities;
-import com.aventstack.extentreports.TestListener;
 import io.restassured.response.Response;
-import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Hashtable;
-
-import static com.api.executeAPI.DeleteCustomerAPI.deleteCustomerWithValidId;
 
 public class DeleteCustomerTest extends BaseTest {
     @Test(dataProviderClass = TestParametrization.class, dataProvider = "datasource")

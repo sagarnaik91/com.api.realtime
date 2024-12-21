@@ -1,4 +1,4 @@
-package com.api.executeAPI;
+package com.api.executeAPI.stripe;
 
 import com.api.setup.BaseTest;
 import io.restassured.response.Response;

@@ -1,4 +1,4 @@
-package com.api.executeAPI;
+package com.api.executeAPI.stripe;
 
 import com.api.setup.BaseTest;
 import io.restassured.response.Response;
@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 public class CreateCustomerAPI extends BaseTest {
 
     public static Response createCustomerWithValidKey(Hashtable<String, String> table) {
-        return given().auth().basic(prop.getProperty("validSecretKey"), "")
+        return given().log().all().auth().basic(prop.getProperty("validSecretKey"), "")
                 .formParam("email", table.get("email"))
                 .formParam("description", table.get("description"))
                 .formParam("name", table.get("name"))

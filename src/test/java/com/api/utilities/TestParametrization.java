@@ -13,7 +13,7 @@ public class TestParametrization {
 //        System.out.println(table.get("name") + " " + table.get("email") + " " + table.get("description"));
 //    }
 
-    @DataProvider(name = "datasource",parallel = true)
+    @DataProvider(name = "datasource",parallel = false)
     public Object[][] getData(Method m) {
         ExcelReader excel = new ExcelReader(Constants.testdataset);
         int rows = excel.getRowCount(Constants.DATA_SHEET);
